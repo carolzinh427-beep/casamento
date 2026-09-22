@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import giftsFull from '../src/lib/gifts-full.json';
 
 const prisma = new PrismaClient();
 
@@ -106,118 +107,17 @@ async function main() {
     ],
   });
 
-  // 4. Criar Presentes
+  // 4. Criar Presentes (61 itens do catálogo)
   await prisma.presente.createMany({
-    data: [
-      {
-        casamentoId: casamento.id,
-        nome: '2 Passagens Aéreas para a Lua de Mel',
-        categoria: 'Lua de Mel',
-        descricao: 'Presente especial para nossa inesquecível viagem de lua de mel.',
-        imagem: '/images/presentes/passagens.jpg',
-        valor: 1996.50,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Adega de Vinhos Climatizada',
-        categoria: 'Eletro',
-        descricao: 'Para brindar com amigos e guardar momentos especiais.',
-        imagem: '/images/presentes/adega.jpg',
-        valor: 1597.20,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Aluguel de Carro para a Lua de Mel',
-        categoria: 'Lua de Mel',
-        descricao: 'Passeios e aventuras românticas na lua de mel.',
-        imagem: '/images/presentes/carro.jpg',
-        valor: 1200.00,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Aparelho de Jantar Branco 30 Peças',
-        categoria: 'Mesa Posta',
-        descricao: 'Aparelho completo de porcelana branca para jantares em família.',
-        imagem: '/images/presentes/aparelho-jantar.jpg',
-        valor: 760.00,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Aparelho de Fondue Preto',
-        categoria: 'Cozinha',
-        descricao: 'Para noites aconchegantes e saborosas.',
-        imagem: '/images/presentes/fondue.jpg',
-        valor: 246.41,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Ar Condicionado Split Inverter 12.000 BTUs',
-        categoria: 'Eletro',
-        descricao: 'Conforto térmico e economia para nosso futuro lar.',
-        imagem: '/images/presentes/ar-condicionado.jpg',
-        valor: 2527.57,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Batedeira Planetária',
-        categoria: 'Cozinha',
-        descricao: 'Para receitas deliciosas e momentos doces a dois.',
-        imagem: '/images/presentes/batedeira.jpg',
-        valor: 658.85,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Conjunto de Cadeiras Estofadas cor Areia',
-        categoria: 'Móveis',
-        descricao: 'Elegância e conforto para receber nossos amigos e familiares.',
-        imagem: '/images/presentes/cadeiras.jpg',
-        valor: 545.71,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Faqueiro Inox 42 Peças',
-        categoria: 'Mesa Posta',
-        descricao: 'Conjunto completo de talheres em aço inoxidável.',
-        imagem: '/images/presentes/faqueiro.jpg',
-        valor: 344.73,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Geladeira Frost Free French Door 3 Portas',
-        categoria: 'Eletro',
-        descricao: 'O coração da nossa cozinha com espaço e tecnologia.',
-        imagem: '/images/presentes/geladeira.jpg',
-        valor: 5590.20,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Jogo de Taças de Cristal 6 Peças',
-        categoria: 'Mesa Posta',
-        descricao: 'Taças de cristal para celebrar cada conquista do casal.',
-        imagem: '/images/presentes/tacas.jpg',
-        valor: 200.00,
-        disponivel: true,
-      },
-      {
-        casamentoId: casamento.id,
-        nome: 'Máquina de Café Expresso',
-        categoria: 'Cozinha',
-        descricao: 'Café fresquinho para começar bem todas as nossas manhãs.',
-        imagem: '/images/presentes/cafeteira.jpg',
-        valor: 432.58,
-        disponivel: true,
-      },
-    ],
+    data: giftsFull.map((g) => ({
+      casamentoId: casamento.id,
+      nome: g.nome,
+      categoria: g.categoria,
+      descricao: g.descricao,
+      imagem: g.imagem,
+      valor: g.valor,
+      disponivel: g.disponivel,
+    })),
   });
 
   // 5. Criar Recados iniciais

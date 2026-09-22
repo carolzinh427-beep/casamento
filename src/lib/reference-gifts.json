@@ -1,0 +1,612 @@
+[
+  {
+    "id": "gift-1",
+    "titulo": "2 Passagens Aéreas para a Lua de Mel",
+    "descricao": "presente 2 passagens aéreas para a lua de mel",
+    "preco": 1996.5,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/2_passagens_aereas_lua_de_mel.jpg",
+    "categoria": "Lua de Mel",
+    "disponivel": true,
+    "ordem": 1
+  },
+  {
+    "id": "gift-2",
+    "titulo": "Abajur Decorativo",
+    "descricao": "presente abajur decorativo",
+    "preco": 246.24,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/abajur_decorativo.jpg",
+    "categoria": "Decoração",
+    "disponivel": true,
+    "ordem": 2
+  },
+  {
+    "id": "gift-3",
+    "titulo": "Adega de Vinhos Climatizada",
+    "descricao": "presente adega de vinhos climatizada",
+    "preco": 1597.2,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/adega_vinhos_climatizada.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 3
+  },
+  {
+    "id": "gift-4",
+    "titulo": "Aluguel de Carro para a Lua de Mel",
+    "descricao": "presente aluguel de carro para a lua de mel",
+    "preco": 1200,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/aluguel_carro_lua_de_mel.jpg",
+    "categoria": "Lua de Mel",
+    "disponivel": true,
+    "ordem": 4
+  },
+  {
+    "id": "gift-5",
+    "titulo": "Aparador em Madeira Jequitibá 200 cm",
+    "descricao": "presente aparador em madeira jequitibá 200cm",
+    "preco": 1263.12,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/aparador_madeira_jequitiba.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 5
+  },
+  {
+    "id": "gift-6",
+    "titulo": "Aparelho de Fondue Preto",
+    "descricao": "presente aparelho de fondue preto",
+    "preco": 246.41,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/aparelho_fondue_preto.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 6
+  },
+  {
+    "id": "gift-7",
+    "titulo": "Aparelho de Jantar Branco - 30 Peças",
+    "descricao": "presente aparelho de jantar branco com 30 peças",
+    "preco": 760,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/aparelho_de_jantar_branco.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 7
+  },
+  {
+    "id": "gift-8",
+    "titulo": "Ar Condicionado Split Inverter 12000 BTUs",
+    "descricao": "presente ar condicionado split inverter 12000 BTUs",
+    "preco": 2527.57,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/ar_condicionado_split.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 8
+  },
+  {
+    "id": "gift-9",
+    "titulo": "Aspirador de Pó Vertical",
+    "descricao": "presente aspirador de pó vertical",
+    "preco": 232.93,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/aspirador_po_vertical.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 9
+  },
+  {
+    "id": "gift-10",
+    "titulo": "Bandeja Preta com Detalhe em Pesponto",
+    "descricao": "presente bandeja preta com detalhe em pesponto",
+    "preco": 366.03,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/bandeja_preta_detalhe_pesponto.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 10
+  },
+  {
+    "id": "gift-11",
+    "titulo": "Batedeira Planetária",
+    "descricao": "presente batedeira planetária",
+    "preco": 658.85,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/batedeira_planetaria.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 11
+  },
+  {
+    "id": "gift-12",
+    "titulo": "Baú em Madeira Maciça  60x40 cm",
+    "descricao": "presente baú em madeira maciça 60x40 cm",
+    "preco": 712.09,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/bau_madeira_macica.jpg",
+    "categoria": "Decoração",
+    "disponivel": true,
+    "ordem": 12
+  },
+  {
+    "id": "gift-13",
+    "titulo": "Buffet 4 Portas cor Madeira Natural e Azul",
+    "descricao": "presente buffet 4 portas madeira natural e azul",
+    "preco": 1663.75,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/buffet_4_portas_natural_azul.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 13
+  },
+  {
+    "id": "gift-14",
+    "titulo": "Carrinho Gourmet para Churrasco",
+    "descricao": "presente carrinho gourmet para churrasco",
+    "preco": 743.09,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/carrinho_gourmet_churrasco.jpg",
+    "categoria": "Decoração",
+    "disponivel": true,
+    "ordem": 14
+  },
+  {
+    "id": "gift-15",
+    "titulo": "Centrifuga de Suco com Jarra",
+    "descricao": "presente centrífuga de suco com jarra",
+    "preco": 385.99,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/centrifuga_de_suco.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 15
+  },
+  {
+    "id": "gift-16",
+    "titulo": "Churrasqueira Elétrica",
+    "descricao": "presente churrasqueira elétrica",
+    "preco": 312.61,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/churrasqueira_eletrica.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 16
+  },
+  {
+    "id": "gift-17",
+    "titulo": "Coifa de Parede",
+    "descricao": "presente coifa de parede",
+    "preco": 878.46,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/coifa_de_parede.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 17
+  },
+  {
+    "id": "gift-18",
+    "titulo": "Conjunto 2 Cadeiras Estofadas cor Areia",
+    "descricao": "presente conjunto 2 cadeiras estofadas cor areia",
+    "preco": 545.71,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/conjunto_2_cadeiras_estofadas_cor_areia.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 18
+  },
+  {
+    "id": "gift-19",
+    "titulo": "Conjunto de Mesas Laterais",
+    "descricao": "presente conjunto de mesas laterais",
+    "preco": 685.47,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/conjunto_mesas_laterais.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 19
+  },
+  {
+    "id": "gift-20",
+    "titulo": "Cooktop a Gás com Quatro Bocas",
+    "descricao": "presente fogão cooktop a gás com quatro bocas",
+    "preco": 1836.78,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/cooktop_a_gas_quatro_bocas.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 20
+  },
+  {
+    "id": "gift-21",
+    "titulo": "Escorredor de Pratos Dobrável em Bambu",
+    "descricao": "presente escorredor de pratos dobravel em bambu",
+    "preco": 206.31,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/escorredor_pratos_dobravel_bambu.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 21
+  },
+  {
+    "id": "gift-22",
+    "titulo": "Escrivaninha Branca com Gaveta",
+    "descricao": "Presente Escrivaninha Branca com Gaveta",
+    "preco": 537.72,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/escrivaninha_branca_gaveta.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 22
+  },
+  {
+    "id": "gift-23",
+    "titulo": "Espelho Redondo 40 cm com Alça em Couro",
+    "descricao": "presente espelho redondo 40 cm com alça em couro",
+    "preco": 352.7,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/espelho_redondo_alca_couro.jpg",
+    "categoria": "Decoração",
+    "disponivel": true,
+    "ordem": 23
+  },
+  {
+    "id": "gift-24",
+    "titulo": "Estante Nichos Branca e Grafite",
+    "descricao": "presente estante nichos branca e grafite",
+    "preco": 1111.39,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/estante_nichos_branca_grafite.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 24
+  },
+  {
+    "id": "gift-25",
+    "titulo": "Faqueiro - 42 Peças",
+    "descricao": "presente faqueiro inox 42 peças",
+    "preco": 344.73,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/faqueiro_42_peças.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 25
+  },
+  {
+    "id": "gift-26",
+    "titulo": "Forno de Embutir Elétrico 47 litros com Timer",
+    "descricao": "presente forno embutir elétrico 47 litros",
+    "preco": 1058.15,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/forno_embutir_eletrico_47_litros.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 26
+  },
+  {
+    "id": "gift-27",
+    "titulo": "Forno Elétrico 46 litros",
+    "descricao": "presente forno elétrico 46 litros",
+    "preco": 371.35,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/forno_eletrico_46_litros.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 27
+  },
+  {
+    "id": "gift-28",
+    "titulo": "Fritadeira Air Fryer 3,2 litros",
+    "descricao": "presente fritadeira air fryer 3.2 litros",
+    "preco": 375.34,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/fritadeira_air_fryer.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 28
+  },
+  {
+    "id": "gift-29",
+    "titulo": "Geladeira Frost Free French Door 3 Portas  110V",
+    "descricao": "presente geladeira frost free french door 3 portas",
+    "preco": 5590.2,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/geladeira_frost_free_french_door.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 29
+  },
+  {
+    "id": "gift-30",
+    "titulo": "Home Theater Wireless",
+    "descricao": "presente home theater wireless",
+    "preco": 705.43,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/home_theater_wireless.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 30
+  },
+  {
+    "id": "gift-31",
+    "titulo": "Jogo de Cama Listrado",
+    "descricao": "presente jogo de cama listrado",
+    "preco": 273.03,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/jogo_de_cama_listrado.jpg",
+    "categoria": "Cozinha",
+    "disponivel": true,
+    "ordem": 31
+  },
+  {
+    "id": "gift-32",
+    "titulo": "Jogo de Facas com Suporte em Madeira - 7 peças",
+    "descricao": "presente jogo de facas com suporte em madeira",
+    "preco": 472.51,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/jogo_de_facas_suporte_madeira.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 32
+  },
+  {
+    "id": "gift-33",
+    "titulo": "Jogo de Panelas Preto - 5 Peças",
+    "descricao": "presente jogo de panelas 5 peças preto",
+    "preco": 918.39,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/jogo_panelas_5_pecas_preto.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 33
+  },
+  {
+    "id": "gift-34",
+    "titulo": "Jogo de Taças de Cristal - 6 Peças",
+    "descricao": "presente jogo de taças de cristal com 6 peças",
+    "preco": 200,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/jogo_tacas_cristal_6_pecas.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 34
+  },
+  {
+    "id": "gift-35",
+    "titulo": "Jogo de Taças para Sobremesa - 8 peças",
+    "descricao": "presente jogo de taças para sobremesa 8 peças",
+    "preco": 310.44,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/jogo_tacas_sobremesa_8_pecas.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 35
+  },
+  {
+    "id": "gift-36",
+    "titulo": "Jogo de Vasos em Cerâmica",
+    "descricao": "Presente Jogo de Vasos em Cerâmica",
+    "preco": 456.53,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/jogo_vasos_ceramica.jpg",
+    "categoria": "Decoração",
+    "disponivel": true,
+    "ordem": 36
+  },
+  {
+    "id": "gift-37",
+    "titulo": "Jogo de Xícaras para Café com Pires - 12 peças",
+    "descricao": "presente jogo de xícaras para café 12 peças",
+    "preco": 312.07,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/jogo_xicaras_para_cafe_com_pires.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 37
+  },
+  {
+    "id": "gift-38",
+    "titulo": "Jogo Edredom Casal Cinza - 3 Peças",
+    "descricao": "presente edredom cinza 3 peças",
+    "preco": 598.95,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/jogo_edredom_cinza.jpg",
+    "categoria": "Cozinha",
+    "disponivel": true,
+    "ordem": 38
+  },
+  {
+    "id": "gift-39",
+    "titulo": "Jogo Toalha de Banho Azul - 4 Peças",
+    "descricao": "presente jogo toalha de banho azul com 4 peças",
+    "preco": 246,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/jogo_toalha_banho_azul_4_pecas.jpg",
+    "categoria": "Cozinha",
+    "disponivel": true,
+    "ordem": 39
+  },
+  {
+    "id": "gift-40",
+    "titulo": "Lava Louças em Inox 14 Serviços",
+    "descricao": "presente lava louças em inox com 14 serviços",
+    "preco": 4512.09,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/lava_louca_inox_14_servicos.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 40
+  },
+  {
+    "id": "gift-41",
+    "titulo": "Máquina de Café Expresso",
+    "descricao": "presente máquina de café expresso",
+    "preco": 432.58,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/maquina-de-cafe.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 41
+  },
+  {
+    "id": "gift-42",
+    "titulo": "Mesa de Centro Retangular Retrô Bege/Madeira",
+    "descricao": "presente mesa de centro retangular retrô bege",
+    "preco": 419.62,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/mesa_centro_retangular_retro.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 42
+  },
+  {
+    "id": "gift-43",
+    "titulo": "Mesa de Jantar Redonda",
+    "descricao": "presente mesa de jantar redonda em madeira",
+    "preco": 1088.76,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/mesa_de_jantar_redonda_madeira.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 43
+  },
+  {
+    "id": "gift-44",
+    "titulo": "Microondas 30 Litros Branco",
+    "descricao": "presente microondas 30 litros branco",
+    "preco": 552.37,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/microondas_30_litros_branco.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 44
+  },
+  {
+    "id": "gift-45",
+    "titulo": "Mixer 3 em 1 Vermelho",
+    "descricao": "presente mixer 3 em 1 vermelho",
+    "preco": 224.94,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/mixer-vermelho-com-utensilios.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 45
+  },
+  {
+    "id": "gift-46",
+    "titulo": "Panela de Arroz Elétrica",
+    "descricao": "presente panela de arroz elétrica",
+    "preco": 200,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/panela_arroz_eletrica.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 46
+  },
+  {
+    "id": "gift-47",
+    "titulo": "Passadeira Turca 80x240 cm",
+    "descricao": "presente passadeira turca 80 x 240 cm",
+    "preco": 998.25,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/passadeira_turca.jpg",
+    "categoria": "Decoração",
+    "disponivel": true,
+    "ordem": 47
+  },
+  {
+    "id": "gift-48",
+    "titulo": "Pipoqueira Elétrica sem Óleo",
+    "descricao": "presente pipoqueira elétrica sem óleo",
+    "preco": 239.58,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/pipoqueira_eletrica_sem_oleo.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 48
+  },
+  {
+    "id": "gift-49",
+    "titulo": "Poltrona Estofada Areia em Madeira",
+    "descricao": "presente poltrona de madeira cor areia",
+    "preco": 865.15,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/poltrona_madeira_areia.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 49
+  },
+  {
+    "id": "gift-50",
+    "titulo": "Porta Condimentos com Base Giratória em Madeira",
+    "descricao": "presente porta condimentos base giratória",
+    "preco": 202,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/porta_condimentos_bambu.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 50
+  },
+  {
+    "id": "gift-51",
+    "titulo": "Porta Doce de Porcelana 2 Níveis",
+    "descricao": "presente porta doce de porcelana com 2 níveis",
+    "preco": 277.02,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/porta_doce_porcelana.jpg",
+    "categoria": "Mesa e Bar",
+    "disponivel": true,
+    "ordem": 51
+  },
+  {
+    "id": "gift-52",
+    "titulo": "Processador de Alimentos Preto - 800W",
+    "descricao": "Presente Processador de Alimentos Preto - 800W",
+    "preco": 415.26,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/processador_preto_800w.jpg",
+    "categoria": "Eletroportáteis",
+    "disponivel": true,
+    "ordem": 52
+  },
+  {
+    "id": "gift-53",
+    "titulo": "Puff Tricot Capuccino",
+    "descricao": "presente puff tricot capuccino",
+    "preco": 483.9,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/puff_tricot_capuccino.jpg",
+    "categoria": "Decoração",
+    "disponivel": true,
+    "ordem": 53
+  },
+  {
+    "id": "gift-54",
+    "titulo": "Quadro Decorativo",
+    "descricao": "Presente Quadro Decorativo",
+    "preco": 449.43,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/quadro_decorativo.jpg",
+    "categoria": "Decoração",
+    "disponivel": true,
+    "ordem": 54
+  },
+  {
+    "id": "gift-55",
+    "titulo": "Rack Off White 2.2m",
+    "descricao": "presente rack off white 2.2m",
+    "preco": 2116.29,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/rack_off_white.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 55
+  },
+  {
+    "id": "gift-56",
+    "titulo": "Sapateira Compacta em Madeira",
+    "descricao": "presente sapateira em madeira branca/natural",
+    "preco": 613.59,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/sapateira_compacta_madeira.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 56
+  },
+  {
+    "id": "gift-57",
+    "titulo": "Smart TV LED 40 Polegadas",
+    "descricao": "presente smart tv led 40 polegadas",
+    "preco": 1796.85,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/smart_tv_led_40_polegadas.jpg",
+    "categoria": "Eletrodomésticos",
+    "disponivel": true,
+    "ordem": 57
+  },
+  {
+    "id": "gift-58",
+    "titulo": "Sofá Estofado Grafite 3 lugares",
+    "descricao": "presente sofá estofado grafite",
+    "preco": 3327.5,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/sofa_estofado_grafite.jpg",
+    "categoria": "Móveis",
+    "disponivel": true,
+    "ordem": 58
+  },
+  {
+    "id": "gift-59",
+    "titulo": "Vale Passeio de Balão",
+    "descricao": "presente vale um passeio de balão",
+    "preco": 464.52,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/vale_passeio_balao.jpg",
+    "categoria": "Lua de Mel",
+    "disponivel": true,
+    "ordem": 59
+  },
+  {
+    "id": "gift-60",
+    "titulo": "Vale Passeio de Barco",
+    "descricao": "presente vale um passeio de barco",
+    "preco": 332.75,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/vale_passeio_barco.jpg",
+    "categoria": "Lua de Mel",
+    "disponivel": true,
+    "ordem": 60
+  },
+  {
+    "id": "gift-61",
+    "titulo": "Vale Sessão de Massagem para o Casal",
+    "descricao": "presente vale sessão de massagem para o casal",
+    "preco": 419.27,
+    "imagemUrl": "https://cdn-assets-legacy.casar.com/thumb/400x400x1/img/presentes/casamento/vale_sessao_massagem_para_o_casal.jpg",
+    "categoria": "Lua de Mel",
+    "disponivel": true,
+    "ordem": 61
+  }
+]
