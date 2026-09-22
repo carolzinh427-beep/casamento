@@ -25,7 +25,7 @@ async function main() {
         'Com o coração cheio de alegria e gratidão a Deus, estamos vivendo um dos momentos mais especiais de nossas vidas. Entre tantos caminhos, Deus permitiu que os nossos se encontrassem. E, cercados pelo amor de nossas famílias e amigos, chegou o momento de transformar dois caminhos em um só. Criamos este espaço para dividir com vocês todos os detalhes desse dia que estamos preparando com tanto carinho.',
       historia:
         'Nossa história começou há alguns anos, num dia em que nada parecia diferente, até que um olhar e uma conversa mudaram tudo. Descobrimos no outro a paz de um lar, o riso fácil nos dias comuns e a cumplicidade que nos faz sonhar juntos. Construímos planos, compartilhamos momentos inesquecíveis e aprendemos que o amor verdadeiro é feito de cuidado, respeito e admiração mútua. Agora, estamos prontos para dar o passo mais importante das nossas vidas: celebrar a nossa união para sempre perante Deus e as pessoas que mais amamos.',
-      musicaUrl: '/music/casamento.mp3',
+      musicaUrl: 'https://www.youtube.com/watch?v=ODRWKGIxB4M',
     },
   });
 

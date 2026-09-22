@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Gift, CheckCircle2, Heart, X, Sparkles } from 'lucide-react';
+import { Gift, CheckCircle2, Heart, X, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface PresenteItem {
@@ -22,6 +22,8 @@ interface GiftListSectionProps {
 export default function GiftListSection({ presentes: initialPresentes = [] }: GiftListSectionProps) {
   const [presentes, setPresentes] = useState<PresenteItem[]>(initialPresentes);
   const [selectedCategory, setSelectedCategory] = useState<string>('Todas');
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const INITIAL_ITEMS = 8;
   const [activeGift, setActiveGift] = useState<PresenteItem | null>(null);
   const [guestName, setGuestName] = useState('');
   const [guestMessage, setGuestMessage] = useState('');
@@ -33,10 +35,22 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
 
   const categories = ['Todas', ...Array.from(new Set(presentes.map((p) => p.categoria || 'Geral')))];
 
+  const handleCategoryChange = (cat: string) => {
+    setSelectedCategory(cat);
+    setIsExpanded(false);
+  };
+
   const filteredPresentes =
     selectedCategory === 'Todas'
       ? presentes
       : presentes.filter((p) => (p.categoria || 'Geral') === selectedCategory);
+
+  const visiblePresentes = isExpanded
+    ? filteredPresentes
+    : filteredPresentes.slice(0, INITIAL_ITEMS);
+
+  const hasMore = filteredPresentes.length > INITIAL_ITEMS;
+  const remainingCount = filteredPresentes.length - INITIAL_ITEMS;
 
   const handleOpenModal = (presente: PresenteItem) => {
     setActiveGift(presente);
@@ -113,7 +127,7 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setSelectedCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className={`px-4 py-2 rounded-full text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer ${
                 selectedCategory === cat
                   ? 'bg-[#52796F] text-white shadow-sm'
@@ -127,7 +141,7 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
 
         {/* Grid de Presentes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-          {filteredPresentes.map((presente) => (
+          {visiblePresentes.map((presente) => (
             <div
               key={presente.id}
               className={`bg-white rounded-2xl overflow-hidden border border-[#E8DFD5] shadow-xs flex flex-col justify-between transition-all duration-300 ${
@@ -207,6 +221,44 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
             </div>
           ))}
         </div>
+
+        {/* Botão de Ler Mais / Carregar Catálogo Completo */}
+        {hasMore && (
+          <div className="mt-14 text-center">
+            {!isExpanded ? (
+              <div className="flex flex-col items-center gap-3">
+                <button
+                  id="btn-ler-mais-presentes"
+                  onClick={() => setIsExpanded(true)}
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#52796F] hover:bg-[#354F52] text-white font-serif text-sm tracking-widest uppercase transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <span>LER MAIS — CARREGAR CATÁLOGO COMPLETO</span>
+                  <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" />
+                </button>
+                <span className="text-xs text-[#6B7280] font-sans">
+                  Mostrando {INITIAL_ITEMS} de {filteredPresentes.length} presentes disponíveis (+{remainingCount} opções)
+                </span>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center gap-3">
+                <button
+                  onClick={() => {
+                    setIsExpanded(false);
+                    const el = document.getElementById('presentes');
+                    el?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-gray-50 text-[#6B7280] border border-[#E8DFD5] text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-xs"
+                >
+                  <span>Mostrar Menos</span>
+                  <ChevronUp className="w-3.5 h-3.5" />
+                </button>
+                <span className="text-xs text-[#52796F] font-sans font-medium">
+                  ✓ Todos os {filteredPresentes.length} presentes carregados
+                </span>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Modal para Escolher Presente */}
