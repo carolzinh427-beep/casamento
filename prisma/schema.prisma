@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Casamento {
+  id              String      @id @default(uuid())
+  nomeNoiva       String      @default("Amanda")
+  nomeNoivo       String      @default("Hugo")
+  data            DateTime
+  mensagemInicial String      @db.Text
+  historia        String      @db.Text
+  musicaUrl       String      @default("/music/casamento.mp3")
+  eventos         Evento[]
+  fotos           Foto[]
+  presentes       Presente[]
+  convidados      Convidado[]
+  recados         Recado[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model Evento {
+  id          String    @id @default(uuid())
+  casamentoId String
+  casamento   Casamento @relation(fields: [casamentoId], references: [id], onDelete: Cascade)
+  tipo        String    // "cerimonia" | "recepcao"
+  titulo      String
+  descricao   String    @db.Text
+  data        String
+  horario     String
+  endereco    String
+  latitude    Float?
+  longitude   Float?
+  mapsUrl     String
+  foto        String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Foto {
+  id          String    @id @default(uuid())
+  casamentoId String
+  casamento   Casamento @relation(fields: [casamentoId], references: [id], onDelete: Cascade)
+  url         String
+  ordem       Int       @default(0)
+  principal   Boolean   @default(false)
+  legenda     String?
+  createdAt   DateTime  @default(now())
+}
+
+model Presente {
+  id                String    @id @default(uuid())
+  casamentoId       String
+  casamento         Casamento @relation(fields: [casamentoId], references: [id], onDelete: Cascade)
+  nome              String
+  categoria         String    @default("Geral")
+  descricao         String    @db.Text
+  imagem            String
+  valor             Float
+  disponivel        Boolean   @default(true)
+  escolhidoPor      String?
+  escolhidoEm       DateTime?
+  mensagemConvidado String?   @db.Text
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model Convidado {
+  id          String    @id @default(uuid())
+  casamentoId String
+  casamento   Casamento @relation(fields: [casamentoId], references: [id], onDelete: Cascade)
+  nome        String
+  email       String
+  telefone    String
+  rsvps       RSVP[]
+  createdAt   DateTime  @default(now())
+}
+
+model RSVP {
+  id           String    @id @default(uuid())
+  convidadoId  String
+  convidado    Convidado @relation(fields: [convidadoId], references: [id], onDelete: Cascade)
+  presente     Boolean   @default(true)
+  adultos      Int       @default(1)
+  criancas     Int       @default(0)
+  acompanhante String?
+  observacoes  String?   @db.Text
+  createdAt    DateTime  @default(now())
+}
+
+model Recado {
+  id          String    @id @default(uuid())
+  casamentoId String
+  casamento   Casamento @relation(fields: [casamentoId], references: [id], onDelete: Cascade)
+  nome        String
+  mensagem    String    @db.Text
+  aprovado    Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+}
