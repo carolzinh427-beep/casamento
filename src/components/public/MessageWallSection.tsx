@@ -56,32 +56,32 @@ export default function MessageWallSection({ recadosIniciais = [] }: MessageWall
   };
 
   return (
-    <section id="recados" className="py-20 md:py-28 bg-[#FAF7F2] border-t border-[#E8DFD5]/60">
+    <section id="recados" className="py-10 md:py-16 lg:py-20 bg-[#FAF7F2] border-t border-[#E8DFD5]/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#C5A880] font-sans font-semibold">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#C5A880] font-sans font-semibold">
             Palavras de Afeto
           </span>
-          <h2 className="text-4xl sm:text-5xl font-serif text-[#2C302E] tracking-tight mt-2 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-[#2C302E] tracking-tight mt-1 sm:mt-2 mb-3 sm:mb-4">
             Mural de Recados
           </h2>
-          <div className="w-16 h-0.5 bg-[#C5A880]/50 mx-auto mb-6" />
-          <p className="text-sm sm:text-base text-[#6B7280] font-sans leading-relaxed">
-            Deixe uma mensagem especial para Amanda & Hugo. Cada palavra de bênção e carinho ficará guardada para sempre em nossas memórias.
+          <div className="w-12 sm:w-16 h-0.5 bg-[#C5A880]/50 mx-auto mb-4 sm:mb-6" />
+          <p className="text-xs sm:text-base text-[#6B7280] font-sans leading-relaxed">
+            Deixe uma mensagem especial para Amanda & Hugo. Cada palavra de carinho ficará guardada em nossas memórias.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
           {/* Formulário de Envio */}
           <div className="lg:col-span-5">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-[#E8DFD5] sticky top-28">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-[#F7F2EA] text-[#A6865A] flex items-center justify-center">
-                  <MessageSquare className="w-5 h-5" />
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-sm border border-[#E8DFD5] lg:sticky lg:top-28">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#F7F2EA] text-[#A6865A] flex items-center justify-center">
+                  <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-lg font-semibold text-[#2C302E]">
+                  <h3 className="font-serif text-base sm:text-lg font-semibold text-[#2C302E]">
                     Escreva para os Noivos
                   </h3>
                   <p className="text-xs text-[#6B7280]">Envie seus votos de felicidade</p>

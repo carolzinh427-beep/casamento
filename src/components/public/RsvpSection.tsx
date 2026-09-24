@@ -76,33 +76,33 @@ export default function RsvpSection() {
   };
 
   return (
-    <section id="rsvp" className="py-20 md:py-28 bg-[#FAF7F2] border-t border-[#E8DFD5]/60">
+    <section id="rsvp" className="py-10 md:py-16 lg:py-20 bg-[#FAF7F2] border-t border-[#E8DFD5]/60">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#52796F] font-sans font-semibold">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#52796F] font-sans font-semibold">
             Sua Presença
           </span>
-          <h2 className="text-4xl sm:text-5xl font-serif text-[#2C302E] tracking-tight mt-2 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-[#2C302E] tracking-tight mt-1 sm:mt-2 mb-3 sm:mb-4">
             Confirme sua Presença
           </h2>
-          <div className="w-16 h-0.5 bg-[#C5A880]/50 mx-auto mb-6" />
-          <p className="text-sm sm:text-base text-[#6B7280] font-sans leading-relaxed">
-            Sua presença é essencial para nós! Por favor, confirme se você e seus acompanhantes poderão comparecer para que possamos organizar cada detalhe com muito carinho.
+          <div className="w-12 sm:w-16 h-0.5 bg-[#C5A880]/50 mx-auto mb-4 sm:mb-6" />
+          <p className="text-xs sm:text-base text-[#6B7280] font-sans leading-relaxed">
+            Sua presença é essencial para nós! Por favor, confirme se você e seus acompanhantes poderão comparecer.
           </p>
         </div>
 
         {/* Formulário */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-[#E8DFD5] relative">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-lg border border-[#E8DFD5] relative">
           {submittedMessage ? (
-            <div className="text-center py-12 animate-in fade-in zoom-in-95 duration-500">
-              <div className="w-16 h-16 rounded-full bg-[#EBF3F0] text-[#52796F] flex items-center justify-center mx-auto mb-6">
-                <CheckCircle2 className="w-10 h-10" />
+            <div className="text-center py-8 sm:py-12 animate-in fade-in zoom-in-95 duration-500">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#EBF3F0] text-[#52796F] flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-[#2C302E] mb-3">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#2C302E] mb-2 sm:mb-3">
                 Resposta Enviada com Sucesso!
               </h3>
-              <p className="text-[#6B7280] font-sans max-w-md mx-auto leading-relaxed mb-8">
+              <p className="text-xs sm:text-sm text-[#6B7280] font-sans max-w-md mx-auto leading-relaxed mb-6 sm:mb-8">
                 {submittedMessage}
               </p>
               <button
@@ -114,15 +114,15 @@ export default function RsvpSection() {
                   setAcompanhante('');
                   setObservacoes('');
                 }}
-                className="px-6 py-2.5 rounded-full border border-[#52796F] text-[#52796F] text-xs font-semibold uppercase tracking-wider hover:bg-[#52796F] hover:text-white transition-colors cursor-pointer"
+                className="px-5 py-2 sm:px-6 sm:py-2.5 rounded-full border border-[#52796F] text-[#52796F] text-xs font-semibold uppercase tracking-wider hover:bg-[#52796F] hover:text-white transition-colors cursor-pointer"
               >
                 Enviar Outra Confirmação
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {errorMessage && (
-                <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
+                <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
                   {errorMessage}
                 </div>
               )}
@@ -132,7 +132,7 @@ export default function RsvpSection() {
 
               {/* Nome Completo */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#2C302E] mb-2">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-[#2C302E] mb-1.5 sm:mb-2">
                   Nome Completo *
                 </label>
                 <input
@@ -142,7 +142,7 @@ export default function RsvpSection() {
                   value={nome}
                   onChange={(e) => setNome(e.target.value)}
                   placeholder="Seu nome e sobrenome"
-                  className="w-full px-4 py-3 rounded-xl bg-[#FAF7F2]/50 border border-[#E8DFD5] text-[#2C302E] text-sm focus:outline-none focus:ring-2 focus:ring-[#52796F] focus:bg-white transition-all"
+                  className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#FAF7F2]/50 border border-[#E8DFD5] text-[#2C302E] text-sm focus:outline-none focus:ring-2 focus:ring-[#52796F] focus:bg-white transition-all"
                 />
               </div>
 

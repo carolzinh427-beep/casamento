@@ -53,42 +53,42 @@ export default function GallerySection({ fotos = [] }: GallerySectionProps) {
   }, [selectedPhotoIndex, fotos.length]);
 
   return (
-    <section id="galeria" className="py-20 md:py-28 bg-[#FAF7F2] border-t border-[#E8DFD5]/60">
+    <section id="galeria" className="py-10 md:py-16 lg:py-20 bg-[#FAF7F2] border-t border-[#E8DFD5]/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#52796F] font-sans font-semibold">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#52796F] font-sans font-semibold">
             Registros Especiais
           </span>
-          <h2 className="text-4xl sm:text-5xl font-serif text-[#2C302E] tracking-tight mt-2 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-[#2C302E] tracking-tight mt-1 sm:mt-2 mb-3 sm:mb-4">
             Galeria do Casal
           </h2>
-          <div className="w-16 h-0.5 bg-[#C5A880]/50 mx-auto" />
+          <div className="w-12 sm:w-16 h-0.5 bg-[#C5A880]/50 mx-auto" />
         </div>
 
-        {/* Grid de Fotos Responsivo */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Grid de Fotos Responsivo (2 colunas no celular) */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {fotos.map((foto, index) => (
             <div
               key={foto.id}
               onClick={() => openLightbox(index)}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-white border border-[#E8DFD5] cursor-pointer hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5"
+              className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs bg-white border border-[#E8DFD5] cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
               <Image
                 src={foto.url}
-                alt={foto.legenda || 'Foto do casamento'}
+                alt={foto.legenda || 'Foto do casal'}
                 fill
                 loading="lazy"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 sm:p-5">
                 <div className="flex items-center justify-between w-full text-white">
-                  <p className="text-sm font-serif truncate pr-4">
+                  <p className="text-xs sm:text-sm font-serif truncate pr-2">
                     {foto.legenda || 'Amanda & Hugo'}
                   </p>
-                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center shrink-0">
-                    <Maximize2 className="w-4 h-4 text-white" />
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center shrink-0">
+                    <Maximize2 className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
                 </div>
               </div>

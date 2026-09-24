@@ -106,31 +106,31 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
   };
 
   return (
-    <section id="presentes" className="py-20 md:py-28 bg-[#FAF7F2] border-t border-[#E8DFD5]/60">
+    <section id="presentes" className="py-10 md:py-16 lg:py-20 bg-[#FAF7F2] border-t border-[#E8DFD5]/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#52796F] font-sans font-semibold">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10">
+          <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#52796F] font-sans font-semibold">
             Gesto de Carinho
           </span>
-          <h2 className="text-4xl sm:text-5xl font-serif text-[#2C302E] tracking-tight mt-2 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-[#2C302E] tracking-tight mt-1 sm:mt-2 mb-3 sm:mb-4">
             Lista de Presentes
           </h2>
-          <div className="w-16 h-0.5 bg-[#C5A880]/50 mx-auto mb-6" />
-          <p className="text-sm sm:text-base text-[#6B7280] font-sans leading-relaxed">
-            A presença de vocês é o maior presente que poderíamos receber. Caso queiram nos agraciar com um mimo para a nossa nova vida a dois, preparamos com carinho as opções abaixo.
+          <div className="w-12 sm:w-16 h-0.5 bg-[#C5A880]/50 mx-auto mb-4 sm:mb-6" />
+          <p className="text-xs sm:text-base text-[#6B7280] font-sans leading-relaxed">
+            A presença de vocês é o nosso maior presente! Se desejarem nos agraciar com um mimo, separamos com carinho as opções abaixo.
           </p>
         </div>
 
         {/* Filtros de Categoria */}
-        <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-3 mb-12">
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto sm:overflow-visible pb-2 sm:pb-0 gap-1.5 sm:gap-3 mb-6 sm:mb-10 scrollbar-none">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => handleCategoryChange(cat)}
-              className={`px-4 py-2 rounded-full text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer ${
+              className={`shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs uppercase tracking-wider font-semibold transition-all cursor-pointer ${
                 selectedCategory === cat
-                  ? 'bg-[#52796F] text-white shadow-sm'
+                  ? 'bg-[#52796F] text-white shadow-xs'
                   : 'bg-white text-[#6B7280] border border-[#E8DFD5] hover:border-[#52796F]/40'
               }`}
             >
@@ -140,13 +140,13 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
         </div>
 
         {/* Grid de Presentes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
           {visiblePresentes.map((presente) => (
             <div
               key={presente.id}
-              className={`bg-white rounded-2xl overflow-hidden border border-[#E8DFD5] shadow-xs flex flex-col justify-between transition-all duration-300 ${
+              className={`bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-[#E8DFD5] shadow-xs flex flex-col justify-between transition-all duration-300 ${
                 presente.disponivel
-                  ? 'hover:shadow-xl hover:-translate-y-1'
+                  ? 'hover:shadow-lg hover:-translate-y-0.5'
                   : 'opacity-70 bg-gray-50/70'
               }`}
             >
@@ -157,17 +157,17 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
                     src={presente.imagem}
                     alt={presente.nome}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="object-cover object-center"
                   />
                   {/* Badge de Disponibilidade */}
-                  <div className="absolute top-3 right-3">
+                  <div className="absolute top-2 right-2 sm:top-3 sm:right-3">
                     {presente.disponivel ? (
-                      <span className="px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider bg-white/90 text-[#52796F] backdrop-blur-xs shadow-xs border border-[#52796F]/20">
+                      <span className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[10px] uppercase font-bold tracking-wider bg-white/90 text-[#52796F] backdrop-blur-xs shadow-xs border border-[#52796F]/20">
                         Disponível
                       </span>
                     ) : (
-                      <span className="px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider bg-[#2C302E]/80 text-white backdrop-blur-xs">
+                      <span className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[10px] uppercase font-bold tracking-wider bg-[#2C302E]/80 text-white backdrop-blur-xs">
                         Presenteado ❤️
                       </span>
                     )}
@@ -175,26 +175,26 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
                 </div>
 
                 {/* Conteúdo */}
-                <div className="p-5">
-                  <span className="text-[10px] uppercase tracking-widest text-[#C5A880] font-semibold block mb-1">
+                <div className="p-3 sm:p-5">
+                  <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#C5A880] font-semibold block mb-0.5 sm:mb-1">
                     {presente.categoria || 'Casamento'}
                   </span>
-                  <h3 className="font-serif text-lg font-semibold text-[#2C302E] leading-snug line-clamp-2 mb-2">
+                  <h3 className="font-serif text-xs sm:text-base lg:text-lg font-semibold text-[#2C302E] leading-snug line-clamp-2 mb-1 sm:mb-2">
                     {presente.nome}
                   </h3>
-                  <p className="text-xs text-[#6B7280] line-clamp-2 mb-4 leading-relaxed">
+                  <p className="hidden sm:block text-xs text-[#6B7280] line-clamp-2 mb-4 leading-relaxed">
                     {presente.descricao}
                   </p>
                 </div>
               </div>
 
               {/* Rodapé do Card com Preço e Botão */}
-              <div className="p-5 pt-0">
-                <div className="mb-4">
-                  <span className="text-[11px] text-[#6B7280] block uppercase tracking-wider">
+              <div className="p-3 sm:p-5 pt-0">
+                <div className="mb-2 sm:mb-4">
+                  <span className="text-[9px] sm:text-[11px] text-[#6B7280] block uppercase tracking-wider">
                     Valor sugerido
                   </span>
-                  <span className="text-xl font-serif font-bold text-[#52796F]">
+                  <span className="text-sm sm:text-xl font-serif font-bold text-[#52796F]">
                     {new Intl.NumberFormat('pt-BR', {
                       style: 'currency',
                       currency: 'BRL',
@@ -206,15 +206,16 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
                   <button
                     id={`btn-escolher-${presente.id}`}
                     onClick={() => handleOpenModal(presente)}
-                    className="w-full py-2.5 px-4 rounded-xl bg-[#52796F] hover:bg-[#354F52] text-white text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full py-2 px-2 sm:py-2.5 sm:px-4 rounded-lg sm:rounded-xl bg-[#52796F] hover:bg-[#354F52] text-white text-[10px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer flex items-center justify-center gap-1 sm:gap-2"
                   >
-                    <Gift className="w-3.5 h-3.5" />
-                    <span>ESCOLHER PRESENTE</span>
+                    <Gift className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <span className="sm:hidden">PRESENTEAR</span>
+                    <span className="hidden sm:inline">ESCOLHER PRESENTE</span>
                   </button>
                 ) : (
-                  <div className="w-full py-2.5 px-4 rounded-xl bg-gray-100 text-[#6B7280] text-xs font-semibold uppercase tracking-wider text-center select-none flex items-center justify-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#52796F]" />
-                    <span>Já Presenteado</span>
+                  <div className="w-full py-2 px-2 sm:py-2.5 sm:px-4 rounded-lg sm:rounded-xl bg-gray-100 text-[#6B7280] text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-center select-none flex items-center justify-center gap-1 sm:gap-1.5">
+                    <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#52796F]" />
+                    <span>Presenteado</span>
                   </div>
                 )}
               </div>
@@ -224,19 +225,19 @@ export default function GiftListSection({ presentes: initialPresentes = [] }: Gi
 
         {/* Botão de Ler Mais / Carregar Catálogo Completo */}
         {hasMore && (
-          <div className="mt-14 text-center">
+          <div className="mt-8 sm:mt-12 text-center">
             {!isExpanded ? (
-              <div className="flex flex-col items-center gap-3">
+              <div className="flex flex-col items-center gap-2 sm:gap-3">
                 <button
                   id="btn-ler-mais-presentes"
                   onClick={() => setIsExpanded(true)}
-                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#52796F] hover:bg-[#354F52] text-white font-serif text-sm tracking-widest uppercase transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
+                  className="group inline-flex items-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-[#52796F] hover:bg-[#354F52] text-white font-serif text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
                 >
-                  <span>LER MAIS — CARREGAR CATÁLOGO COMPLETO</span>
-                  <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" />
+                  <span>LER MAIS — CATÁLOGO COMPLETO</span>
+                  <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-y-1" />
                 </button>
-                <span className="text-xs text-[#6B7280] font-sans">
-                  Mostrando {INITIAL_ITEMS} de {filteredPresentes.length} presentes disponíveis (+{remainingCount} opções)
+                <span className="text-[11px] sm:text-xs text-[#6B7280] font-sans">
+                  Mostrando {INITIAL_ITEMS} de {filteredPresentes.length} presentes (+{remainingCount} opções)
                 </span>
               </div>
             ) : (
