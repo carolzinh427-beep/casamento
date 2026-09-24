@@ -41,7 +41,7 @@ export default function CeremonySection({
         {/* Card Principal */}
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-[#E8DFD5] overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           {/* Foto da Igreja */}
-          <div className="lg:col-span-6 relative min-h-[200px] sm:min-h-[280px] lg:min-h-full">
+          <div className="lg:col-span-6 relative w-full h-64 sm:h-80 lg:h-full min-h-[200px] sm:min-h-[280px]">
             <Image
               src={foto}
               alt={titulo}

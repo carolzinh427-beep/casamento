@@ -19,7 +19,7 @@ export default function ReceptionSection({
   endereco = 'Salão de Festas do Restaurante NAU Frutos do Mar, Setor de Clubes Esportivos Sul, Brasília - DF, CEP: 70297-400',
   descricao = 'Após a cerimônia, teremos a alegria de recebê-los para a nossa recepção, que acontecerá em um espaço reservado exclusivamente para a celebração do nosso casamento. Preparamos este momento com muito carinho para comemorarmos juntos, com um jantar especial e muita alegria.',
   mapsUrl = 'https://maps.google.com/?q=Restaurante+NAU+Frutos+do+Mar+Brasília',
-  foto = '/images/recepcao.jpg',
+  foto = '/images/recepcao-nau.jpg',
 }: ReceptionSectionProps) {
   const embedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(endereco)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
@@ -95,15 +95,22 @@ export default function ReceptionSection({
             </a>
           </div>
 
-          {/* Foto do Salão de Festas (Restaurante NAU) */}
-          <div className="lg:col-span-6 relative min-h-[220px] sm:min-h-[280px] lg:min-h-full aspect-[16/10] sm:aspect-auto order-1 lg:order-2">
+          {/* Foto do Salão de Festas (Restaurante NAU Frutos do Mar) */}
+          <div className="lg:col-span-6 relative w-full h-64 sm:h-80 lg:h-full min-h-[240px] sm:min-h-[300px] order-1 lg:order-2 bg-[#FAF7F2] overflow-hidden group">
             <Image
               src={foto}
-              alt={titulo}
+              alt="Restaurante NAU Frutos do Mar - Local da Festa"
               fill
+              priority
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-center"
+              className="object-cover object-center group-hover:scale-103 transition-transform duration-700 ease-out"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden" />
+            <div className="absolute bottom-3 left-4 right-4 text-white lg:hidden">
+              <span className="text-xs font-serif tracking-wider drop-shadow-md">
+                Restaurante NAU Frutos do Mar
+              </span>
+            </div>
           </div>
         </div>
       </div>

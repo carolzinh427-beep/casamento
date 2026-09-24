@@ -54,7 +54,7 @@ async function main() {
         horario: 'Após a Cerimônia',
         endereco: 'Salão de Festas do Restaurante NAU Frutos do Mar, Setor de Clubes Esportivos Sul, Brasília - DF, CEP: 70297-400',
         mapsUrl: 'https://maps.google.com/?q=Restaurante+NAU+Frutos+do+Mar+Brasília',
-        foto: '/images/recepcao.jpg',
+        foto: '/images/recepcao-nau.jpg',
       },
     ],
   });

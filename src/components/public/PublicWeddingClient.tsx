@@ -127,7 +127,7 @@ export default function PublicWeddingClient({
           endereco={recepcao?.endereco}
           descricao={recepcao?.descricao}
           mapsUrl={recepcao?.mapsUrl}
-          foto={recepcao?.foto || '/images/recepcao.jpg'}
+          foto={recepcao?.foto || '/images/recepcao-nau.jpg'}
         />
 
         <GallerySection fotos={fotos} />
