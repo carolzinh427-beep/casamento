@@ -74,7 +74,7 @@ async function main() {
         url: '/images/historia-01.jpg',
         ordem: 2,
         principal: false,
-        legenda: 'Viagem inesquecível a dois',
+        legenda: 'Onde quer que a gente vá, o meu lugar favorito é com você',
       },
       {
         casamentoId: casamento.id,
