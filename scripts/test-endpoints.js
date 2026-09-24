@@ -6,7 +6,7 @@ async function test() {
   console.log('Status da Home:', homeRes.status);
   console.log('Contém Amanda & Hugo:', homeHtml.includes('Amanda') && homeHtml.includes('Hugo'));
   console.log('Contém botão ENTRAR:', homeHtml.includes('ENTRAR'));
-  console.log('Contém música no áudio:', homeHtml.includes('casamento.mp3'));
+  console.log('Contém música oficial Dan + Shay:', homeHtml.includes('ODRWKGIxB4M') || homeHtml.includes('From The Ground Up'));
   const hasAdminLinks = homeHtml.includes('href="/admin"') || homeHtml.includes('/admin/login') || homeHtml.includes('Painel') || homeHtml.includes('Área dos noivos');
   console.log('Possui link ou texto administrativo na página pública:', hasAdminLinks ? 'ATENÇÃO: SIM' : 'NÃO (Correto! 100% isolado)');
 

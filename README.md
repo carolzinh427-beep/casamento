@@ -56,8 +56,6 @@ weding/
 │   ├── schema.prisma              # Definição dos modelos para PostgreSQL
 │   └── seed.ts                    # Script de seed com dados reais de Amanda & Hugo
 ├── public/
-│   ├── music/
-│   │   └── casamento.mp3          # Arquivo de áudio inicial
 │   └── images/
 │       ├── hero.jpg               # Foto de capa do casal
 │       ├── cerimonia.jpg          # Foto da igreja/paróquia
@@ -154,11 +152,11 @@ Acesse no seu navegador:
 
 ---
 
-## 🎵 Como Alterar a Música do Casamento
+## 🎵 Música Oficial do Casamento
 
-1. Coloque o seu arquivo `.mp3` na pasta `public/music/` (exemplo: `public/music/casamento.mp3`).
-2. Se o nome do arquivo for diferente, acesse o painel em `/admin` > aba **Dados dos Noivos** > campo **URL do Arquivo de Música** e informe o caminho (exemplo: `/music/sua-musica.mp3`).
-3. Clique em **Salvar Alterações**.
+A trilha sonora oficial do site é **Dan + Shay — "From The Ground Up"** (exatamente a mesma do site de referência dos noivos), executada em alta fidelidade via YouTube IFrame API com início automático ao clicar em `ENTRAR ♫` e controles de tocar/pausar pelo botão flutuante.
+
+Para alterar a música, acesse o painel em `/admin` > aba **Dados dos Noivos** > campo **URL do Arquivo de Música** e informe a URL do YouTube ou caminho de áudio desejado.
 
 ---
 

@@ -14,7 +14,7 @@ model Casamento {
   data            DateTime
   mensagemInicial String      @db.Text
   historia        String      @db.Text
-  musicaUrl       String      @default("/music/casamento.mp3")
+  musicaUrl       String      @default("https://www.youtube.com/watch?v=ODRWKGIxB4M")
   eventos         Evento[]
   fotos           Foto[]
   presentes       Presente[]

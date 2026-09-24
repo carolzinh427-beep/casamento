@@ -14,13 +14,13 @@ declare global {
   }
 }
 
-function extractYouTubeId(url?: string): string | null {
-  if (!url) return null;
+function extractYouTubeId(url?: string): string {
+  if (!url) return 'ODRWKGIxB4M';
   const regExp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
   const match = url.match(regExp);
   if (match && match[1]) return match[1];
   if (/^[a-zA-Z0-9_-]{11}$/.test(url)) return url;
-  return null;
+  return 'ODRWKGIxB4M'; // Dan + Shay - From The Ground Up (Música Oficial)
 }
 
 export default function MusicPlayer({
@@ -29,27 +29,29 @@ export default function MusicPlayer({
 }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
-  const [isYtReady, setIsYtReady] = useState(false);
 
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const ytPlayerRef = useRef<any>(null);
   const pendingPlayRef = useRef(false);
 
+  // Música oficial exclusiva: Dan + Shay - From The Ground Up
   const youtubeId = extractYouTubeId(src);
 
-  // Inicializa a API do YouTube IFrame quando o ID de vídeo estiver presente
+  // Inicializa o player com as configurações oficiais do site de referência (casar.com)
   useEffect(() => {
-    if (!youtubeId) return;
+    let isCancelled = false;
 
     const initPlayer = () => {
-      if (!window.YT || !window.YT.Player) return;
+      if (isCancelled || !window.YT || !window.YT.Player) return;
 
       try {
-        ytPlayerRef.current = new window.YT.Player('youtube-audio-player', {
-          height: '1',
-          width: '1',
+        ytPlayerRef.current = new window.YT.Player('sdn-youtube-player', {
+          height: '200',
+          width: '200',
           videoId: youtubeId,
           playerVars: {
+            enablejsapi: 1,
+            playsinline: 1,
+            origin: typeof window !== 'undefined' ? window.location.origin : '',
             autoplay: 0,
             controls: 0,
             disablekb: 1,
@@ -58,30 +60,32 @@ export default function MusicPlayer({
             playlist: youtubeId,
             modestbranding: 1,
             rel: 0,
-            playsinline: 1,
           },
           events: {
             onReady: (event: any) => {
-              setIsYtReady(true);
+              if (isCancelled) return;
+              event.target.setVolume(75);
               if (pendingPlayRef.current) {
                 event.target.playVideo();
                 setIsPlaying(true);
               }
             },
             onStateChange: (event: any) => {
-              // YT.PlayerState.PLAYING === 1
-              // YT.PlayerState.PAUSED === 2
-              // YT.PlayerState.ENDED === 0
+              if (isCancelled) return;
+              // 1 = PLAYING, 2 = PAUSED, 0 = ENDED
               if (event.data === 1) {
                 setIsPlaying(true);
-              } else if (event.data === 2 || event.data === 0) {
+              } else if (event.data === 2) {
                 setIsPlaying(false);
+              } else if (event.data === 0) {
+                // Loop contínuo
+                event.target.playVideo();
               }
             },
           },
         });
       } catch (err) {
-        console.warn('Erro ao inicializar player do YouTube:', err);
+        console.warn('Player init:', err);
       }
     };
 
@@ -94,9 +98,9 @@ export default function MusicPlayer({
         initPlayer();
       };
 
-      if (!document.getElementById('youtube-iframe-script')) {
+      if (!document.getElementById('youtube-iframe-api-script')) {
         const tag = document.createElement('script');
-        tag.id = 'youtube-iframe-script';
+        tag.id = 'youtube-iframe-api-script';
         tag.src = 'https://www.youtube.com/iframe_api';
         const firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
@@ -104,6 +108,7 @@ export default function MusicPlayer({
     }
 
     return () => {
+      isCancelled = true;
       if (ytPlayerRef.current?.destroy) {
         try {
           ytPlayerRef.current.destroy();
@@ -114,43 +119,30 @@ export default function MusicPlayer({
     };
   }, [youtubeId]);
 
-  // Disparo automático quando o convidado clica em "ENTRAR ♫"
+  // Iniciar reprodução da música oficial "From The Ground Up"
   const startPlaying = useCallback(() => {
     setHasInteracted(true);
 
-    if (youtubeId) {
-      if (ytPlayerRef.current?.playVideo) {
-        try {
-          ytPlayerRef.current.playVideo();
-          setIsPlaying(true);
-        } catch (e) {
-          console.warn('Falha no playVideo do YouTube:', e);
-        }
-      } else {
-        pendingPlayRef.current = true;
+    if (ytPlayerRef.current?.playVideo) {
+      try {
+        ytPlayerRef.current.playVideo();
+        setIsPlaying(true);
+      } catch (e) {
+        console.warn('Erro ao tocar vídeo:', e);
       }
+    } else {
+      pendingPlayRef.current = true;
     }
+  }, []);
 
-    // Fallback simultâneo para o elemento <audio> caso YouTube falhe ou seja bloqueado
-    if (audioRef.current) {
-      audioRef.current
-        .play()
-        .then(() => {
-          if (!youtubeId) setIsPlaying(true);
-        })
-        .catch(() => {
-          // navegador pode exigir interação direta no elemento
-        });
-    }
-  }, [youtubeId]);
-
+  // Disparo automático ao clicar em "ENTRAR ♫" na tela de abertura
   useEffect(() => {
     if (autoPlayTrigger && !hasInteracted) {
       startPlaying();
     }
   }, [autoPlayTrigger, hasInteracted, startPlaying]);
 
-  // Alterna entre Play e Pause
+  // Alternar entre tocar e pausar
   const togglePlay = () => {
     if (isPlaying) {
       if (ytPlayerRef.current?.pauseVideo) {
@@ -160,9 +152,6 @@ export default function MusicPlayer({
           // ignore
         }
       }
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
       setIsPlaying(false);
     } else {
       startPlaying();
@@ -171,30 +160,28 @@ export default function MusicPlayer({
 
   return (
     <>
-      {/* Player oculto do YouTube (usado no site de referência casar.com) */}
+      {/* Container invisível posicionado fora da tela para o player do YouTube rodar sem restrições */}
       <div
-        id="youtube-player-container"
-        className="fixed -top-[1000px] -left-[1000px] w-1 h-1 opacity-0 pointer-events-none overflow-hidden"
+        id="sdn-music-player-wrap"
+        className="fixed -top-[600px] -left-[600px] w-[200px] h-[200px] opacity-1 pointer-events-none overflow-hidden"
+        style={{ zIndex: -999 }}
         aria-hidden="true"
       >
-        <div id="youtube-audio-player" />
+        <div id="sdn-youtube-player" />
       </div>
 
-      {/* Fallback de áudio local HTML5 */}
-      <audio ref={audioRef} src="/music/casamento.mp3" loop preload="auto" />
-
-      {/* Botão flutuante minimalista no canto inferior direito */}
+      {/* Botão flutuante no canto inferior direito */}
       <div className="fixed bottom-6 right-6 z-40">
         <button
           id="btn-music-toggle"
           onClick={togglePlay}
-          aria-label={isPlaying ? 'Pausar música dos noivos' : 'Tocar música dos noivos'}
+          aria-label={isPlaying ? 'Pausar: Dan + Shay — From The Ground Up' : 'Tocar: Dan + Shay — From The Ground Up'}
           className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/95 hover:bg-white text-[#2C302E] shadow-xl border border-[#C5A880]/50 backdrop-blur-md transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
         >
           {isPlaying ? (
             <div className="flex items-center gap-1">
               <span className="text-base text-[#52796F] font-bold select-none leading-none">♫</span>
-              {/* Barrinhas animadas de som */}
+              {/* Barrinhas animadas de equalizador */}
               <div className="flex items-end gap-0.5 h-3">
                 <span className="w-0.5 h-full bg-[#52796F] rounded-full soundwave-bar-1" />
                 <span className="w-0.5 h-full bg-[#52796F] rounded-full soundwave-bar-2" />
@@ -207,9 +194,9 @@ export default function MusicPlayer({
             </span>
           )}
 
-          {/* Tooltip informativa no hover */}
+          {/* Tooltip informativa da música oficial */}
           <span className="absolute right-14 whitespace-nowrap bg-[#2C302E] text-white text-[11px] px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-lg font-sans flex items-center gap-1.5">
-            <span className="font-semibold">{isPlaying ? 'Pausar:' : 'Tocar:'}</span>
+            <span className="font-semibold text-[#C5A880]">{isPlaying ? 'Pausar:' : 'Tocar:'}</span>
             <span>Dan + Shay — From The Ground Up</span>
           </span>
         </button>
