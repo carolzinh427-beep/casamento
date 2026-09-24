@@ -19,7 +19,7 @@ export default function ReceptionSection({
   endereco = 'Salão de Festas do Restaurante NAU Frutos do Mar, Setor de Clubes Esportivos Sul, Brasília - DF, CEP: 70297-400',
   descricao = 'Após a cerimônia, teremos a alegria de recebê-los para a nossa recepção, que acontecerá em um espaço reservado exclusivamente para a celebração do nosso casamento. Preparamos este momento com muito carinho para comemorarmos juntos, com um jantar especial e muita alegria.',
   mapsUrl = 'https://maps.google.com/?q=Restaurante+NAU+Frutos+do+Mar+Brasília',
-  foto = '/images/recepcao-nau.jpg',
+  foto = '/images/nau-brasilia.jpg',
 }: ReceptionSectionProps) {
   const embedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(endereco)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
