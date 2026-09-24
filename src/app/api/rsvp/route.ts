@@ -28,9 +28,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // E-mail é opcional: valida formato apenas se foi preenchido
+    const emailStr = typeof email === 'string' ? email.trim() : '';
+    if (emailStr !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailStr)) {
       return NextResponse.json(
-        { error: 'Por favor, informe um endereço de e-mail válido.' },
+        { error: 'Por favor, informe um endereço de e-mail válido ou deixe em branco.' },
         { status: 400 }
       );
     }
@@ -48,7 +50,7 @@ export async function POST(req: NextRequest) {
 
     const saved = await createRsvp({
       nome: nome.trim(),
-      email: email.trim().toLowerCase(),
+      email: emailStr ? emailStr.toLowerCase() : '',
       telefone: telefone.trim(),
       presente: isConfirmed,
       adultos: isConfirmed ? numAdultos : 0,

@@ -150,15 +150,14 @@ export default function RsvpSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-[#2C302E] mb-2">
-                    E-mail *
+                    E-mail <span className="text-[#6B7280] font-normal lowercase">(opcional)</span>
                   </label>
                   <input
                     id="rsvp-email"
                     type="email"
-                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="seuemail@exemplo.com"
+                    placeholder="seuemail@exemplo.com (opcional)"
                     className="w-full px-4 py-3 rounded-xl bg-[#FAF7F2]/50 border border-[#E8DFD5] text-[#2C302E] text-sm focus:outline-none focus:ring-2 focus:ring-[#52796F] focus:bg-white transition-all"
                   />
                 </div>

@@ -956,7 +956,7 @@ export default function AdminDashboardPage() {
                       </td>
                       <td className="p-4 text-[#6B7280]">
                         <span className="font-medium text-[#2C302E] block">{r.telefone}</span>
-                        <span className="text-[11px]">{r.email}</span>
+                        <span className="text-[11px]">{r.email || <span className="italic text-gray-400">Não informado</span>}</span>
                       </td>
                       <td className="p-4">
                         {r.presente ? (

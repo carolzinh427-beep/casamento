@@ -473,7 +473,7 @@ export async function getRsvps() {
         return list.map((r) => ({
           id: r.id,
           nome: r.convidado.nome,
-          email: r.convidado.email,
+          email: r.convidado.email || '',
           telefone: r.convidado.telefone,
           presente: r.presente,
           adultos: r.adultos,
@@ -492,7 +492,7 @@ export async function getRsvps() {
 
 export async function createRsvp(data: {
   nome: string;
-  email: string;
+  email?: string;
   telefone: string;
   presente: boolean;
   adultos: number;
@@ -501,10 +501,11 @@ export async function createRsvp(data: {
   observacoes?: string;
 }) {
   const agora = new Date().toISOString();
+  const cleanEmail = data.email ? data.email.trim().toLowerCase() : '';
   const newRsvp = {
     id: `rsvp-${Date.now()}`,
     nome: data.nome,
-    email: data.email,
+    email: cleanEmail,
     telefone: data.telefone,
     presente: Boolean(data.presente),
     adultos: Number(data.adultos) || 1,
@@ -522,7 +523,7 @@ export async function createRsvp(data: {
           data: {
             casamentoId: casamento.id,
             nome: data.nome,
-            email: data.email,
+            email: cleanEmail || null,
             telefone: data.telefone,
           },
         });

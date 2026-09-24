@@ -75,7 +75,7 @@ model Convidado {
   casamentoId String
   casamento   Casamento @relation(fields: [casamentoId], references: [id], onDelete: Cascade)
   nome        String
-  email       String
+  email       String?
   telefone    String
   rsvps       RSVP[]
   createdAt   DateTime  @default(now())
